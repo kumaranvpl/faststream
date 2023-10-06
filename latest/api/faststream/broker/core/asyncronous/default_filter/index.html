@@ -18,6 +18,15 @@
         gtag('config', 'G-DB0YY59TE4');
     </script>
 
+    <script>
+        window.onload = function () {
+            // Delay the redirection until the Google Analytics script is loaded.
+            window.location.replace(
+                "../../../../../../../0.2/api/faststream/broker/core/asyncronous/default_filter/" + window.location.search + window.location.hash
+            );
+        };
+    </script>
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="FastStream" />
     <meta property="og:description" content="FastStream Python messaging framework documentation" />
@@ -35,14 +44,6 @@
 
 <body>
     Redirecting to <a href="../../../../../../../0.2/api/faststream/broker/core/asyncronous/default_filter/">../../../../../../../0.2/api/faststream/broker/core/asyncronous/default_filter/</a>...
-    <script>
-        window.onload = function () {
-            // Delay the redirection until the Google Analytics script is loaded.
-            window.location.replace(
-                "../../../../../../../0.2/api/faststream/broker/core/asyncronous/default_filter/" + window.location.search + window.location.hash
-            );
-        };
-    </script>
 </body>
 
 </html>
