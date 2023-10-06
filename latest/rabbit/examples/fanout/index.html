@@ -11,7 +11,7 @@
         id="__analytics">function __md_analytics() { function n() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], n("js", new Date), n("config", "G-DB0YY59TE4"), document.addEventListener("DOMContentLoaded", function () { document.forms.search && document.forms.search.query.addEventListener("blur", function () { this.value && n("event", "search", { search_term: this.value }) }), document$.subscribe(function () { var a = document.forms.feedback; if (void 0 !== a) for (var e of a.querySelectorAll("[type=submit]")) e.addEventListener("click", function (e) { e.preventDefault(); var t = document.location.pathname, e = this.getAttribute("data-md-value"); n("event", "feedback", { page: t, data: e }), a.firstElementChild.disabled = !0; e = a.querySelector(".md-feedback__note [data-md-value='" + e + "']"); e && (e.hidden = !1) }), a.hidden = !1 }), location$.subscribe(function (e) { n("config", "G-DB0YY59TE4", { page_path: e.pathname }) }) }); var e = document.createElement("script"); e.async = !0, e.src = "https://www.googletagmanager.com/gtag/js?id=G-DB0YY59TE4", document.getElementById("__analytics").insertAdjacentElement("afterEnd", e) }</script> -->
 
     <!-- Google tag (gtag.js) -->
-    <script src="https://www.googletagmanager.com/gtag/js?id=G-DB0YY59TE4"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DB0YY59TE4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -38,9 +38,12 @@
 <body>
     Redirecting to <a href="../../../../0.2/rabbit/examples/fanout/">../../../../0.2/rabbit/examples/fanout/</a>...
     <script>
-        window.location.replace(
-            "../../../../0.2/rabbit/examples/fanout/" + window.location.search + window.location.hash
-        );
+        window.onload = function () {
+            // Delay the redirection until the Google Analytics script is loaded.
+            window.location.replace(
+                "latest/" + window.location.search + window.location.hash
+            );
+        };
     </script>
 </body>
 
