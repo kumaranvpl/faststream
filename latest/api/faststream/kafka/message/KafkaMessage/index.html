@@ -103,7 +103,7 @@
                 var referrer = document.referrer;
 
                 // Check if both the URL parameter and document.referrer are empty
-                if (referrer) {
+                if (referrer && !document.referrer.includes("faststream.airt.ai")) {
                     var encodedReferrer = encodeURIComponent(referrer);
                 }
             }
