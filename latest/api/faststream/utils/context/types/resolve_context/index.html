@@ -89,22 +89,28 @@
                 var urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(name);
             }
-    
+
             // Check if the current URL already has a utm_referrer parameter
             var existingReferrer = getQueryParam('utm_referrer');
-    
+
+            var encodedReferrer = '';
+
             if (existingReferrer) {
                 // Use the existing utm_referrer value for the redirect
                 var encodedReferrer = encodeURIComponent(existingReferrer);
             } else {
                 // If there's no utm_referrer parameter in the URL, use document.referrer
                 var referrer = document.referrer;
-                var encodedReferrer = encodeURIComponent(referrer);
+
+                // Check if both the URL parameter and document.referrer are empty
+                if (referrer) {
+                    var encodedReferrer = encodeURIComponent(referrer);
+                }
             }
-    
-            // Redirect to /latest and include the referrer as a query parameter
+
+            // Redirect to href and include the referrer as a query parameter
             window.location.replace(
-                "../../../../../../../0.2/api/faststream/utils/context/types/resolve_context/?utm_referrer=" + encodedReferrer + window.location.hash
+                "../../../../../../../0.2/api/faststream/utils/context/types/resolve_context/" + (encodedReferrer ? '?utm_referrer=' + encodedReferrer : '') + window.location.hash
             );
         };
     </script>
