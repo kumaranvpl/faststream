@@ -90,28 +90,27 @@
             }
 
             // Check if the current URL already has a utm_referrer parameter
-            const existingReferrer = getQueryParam('utm_referrer');
+            const existingReferrer = getQueryParam('utm_referrer') || "";
 
-            var encodedReferrer = '';
+            // If there's no utm_referrer parameter in the URL, use document.referrer
+            const referrer = document.referrer;
+            const isReferrerValid = referrer && !referrer.includes("faststream.airt.ai");
 
-            if (existingReferrer) {
-                // Use the existing utm_referrer value for the redirect
-                var encodedReferrer = encodeURIComponent(existingReferrer);
-            } else {
-                // If there's no utm_referrer parameter in the URL, use document.referrer
-                const referrer = document.referrer;
+            var encodedReferrer = isReferrerValid ? encodeURIComponent(referrer) : encodeURIComponent(existingReferrer);
 
-                // Check if both the URL parameter and document.referrer are empty
-                if (referrer && !referrer.includes("faststream.airt.ai")) {
-                    var encodedReferrer = encodeURIComponent(referrer);
-                }
+            const existingGetParams = window.location.search;
+            var newGetParams = "";
+
+            if (existingGetParams && encodedReferrer){
+                newGetParams = existingGetParams + "&&utm_referrer=" + encodedReferrer
             }
-
-            var existingGetParams = window.location.search ? window.location.search + "&&" : "?";
+            else{
+                newGetParams = existingGetParams ? existingGetParams : "?utm_referrer=" + encodedReferrer;
+            }
 
             // Redirect to href and include the referrer as a query parameter
             window.location.replace(
-                "../../../../../0.2/api/faststream/exceptions/AckMessage/" + existingGetParams + (encodedReferrer ? '?utm_referrer=' + encodedReferrer : '') + window.location.hash
+                "../../../../../0.2/api/faststream/exceptions/AckMessage/" + newGetParams + window.location.hash
             );
         };
     </script>
