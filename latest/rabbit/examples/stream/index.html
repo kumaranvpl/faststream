@@ -86,12 +86,11 @@
         window.onload = function () {
             // Function to get a query parameter from the URL
             function getQueryParam(name) {
-                var urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(name);
+                return new URLSearchParams(window.location.search).get(name);
             }
 
             // Check if the current URL already has a utm_referrer parameter
-            var existingReferrer = getQueryParam('utm_referrer');
+            const existingReferrer = getQueryParam('utm_referrer');
 
             var encodedReferrer = '';
 
@@ -100,17 +99,19 @@
                 var encodedReferrer = encodeURIComponent(existingReferrer);
             } else {
                 // If there's no utm_referrer parameter in the URL, use document.referrer
-                var referrer = document.referrer;
+                const referrer = document.referrer;
 
                 // Check if both the URL parameter and document.referrer are empty
-                if (referrer && !document.referrer.includes("faststream.airt.ai")) {
+                if (referrer && !referrer.includes("faststream.airt.ai")) {
                     var encodedReferrer = encodeURIComponent(referrer);
                 }
             }
 
+            var existingGetParams = window.location.search ? window.location.search + "&&" : "?";
+
             // Redirect to href and include the referrer as a query parameter
             window.location.replace(
-                "../../../../0.2/rabbit/examples/stream/" + (encodedReferrer ? '?utm_referrer=' + encodedReferrer : '') + window.location.hash
+                "../../../../0.2/rabbit/examples/stream/" + existingGetParams + (encodedReferrer ? '?utm_referrer=' + encodedReferrer : '') + window.location.hash
             );
         };
     </script>
