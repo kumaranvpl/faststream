@@ -90,10 +90,10 @@
             // Use the referrer if valid, otherwise use the existingReferrer
             const referrer = document.referrer;
             const isReferrerValid = referrer && !referrer.includes("faststream.airt.ai");
-            const encodedReferrer = isReferrerValid ? encodeURIComponent(referrer) : encodeURIComponent(existingReferrer);
+            const validReferrer = isReferrerValid ? referrer : existingReferrer;
     
-            if (encodedReferrer) {
-                urlSearchParams.set('utm_referrer', encodedReferrer);
+            if (validReferrer) {
+                urlSearchParams.set('utm_referrer', validReferrer);
             }
     
             // Update the search parameters with the new utm_referrer
