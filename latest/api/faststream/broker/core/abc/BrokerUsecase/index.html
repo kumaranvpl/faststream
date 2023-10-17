@@ -101,11 +101,16 @@
             const existingGetParams = window.location.search;
             var newGetParams = "";
 
-            if (existingGetParams && encodedReferrer){
-                newGetParams = existingGetParams + "&&utm_referrer=" + encodedReferrer
+            if (existingGetParams){
+                newGetParams = existingGetParams;
+                if (encodedReferrer && !existingGetParams.includes("utm_referrer")){
+                    newGetParams = newGetParams + "&&utm_referrer=" + encodedReferrer
+                }
             }
             else{
-                newGetParams = existingGetParams ? existingGetParams : "?utm_referrer=" + encodedReferrer;
+                if (encodedReferrer){
+                    newGetParams = "?utm_referrer=" + encodedReferrer;
+                }
             }
 
             // Redirect to href and include the referrer as a query parameter
