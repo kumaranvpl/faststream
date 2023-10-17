@@ -84,39 +84,23 @@
     </script> -->
     <script>
         window.onload = function () {
-            // Function to get a query parameter from the URL
-            function getQueryParam(name) {
-                return new URLSearchParams(window.location.search).get(name);
-            }
-
-            // Check if the current URL already has a utm_referrer parameter
-            const existingReferrer = getQueryParam('utm_referrer') || "";
-
-            // If there's no utm_referrer parameter in the URL, use document.referrer
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const existingReferrer = urlSearchParams.get('utm_referrer') || "";
+    
+            // Use the referrer if valid, otherwise use the existingReferrer
             const referrer = document.referrer;
             const isReferrerValid = referrer && !referrer.includes("faststream.airt.ai");
-
-            var encodedReferrer = isReferrerValid ? encodeURIComponent(referrer) : encodeURIComponent(existingReferrer);
-
-            const existingGetParams = window.location.search;
-            var newGetParams = "";
-
-            if (existingGetParams){
-                newGetParams = existingGetParams;
-                if (encodedReferrer && !existingGetParams.includes("utm_referrer")){
-                    newGetParams = newGetParams + "&&utm_referrer=" + encodedReferrer
-                }
+            const encodedReferrer = isReferrerValid ? encodeURIComponent(referrer) : encodeURIComponent(existingReferrer);
+    
+            if (encodedReferrer) {
+                urlSearchParams.set('utm_referrer', encodedReferrer);
             }
-            else{
-                if (encodedReferrer){
-                    newGetParams = "?utm_referrer=" + encodedReferrer;
-                }
-            }
-
-            // Redirect to href and include the referrer as a query parameter
-            window.location.replace(
-                "../../../../../../../0.2/api/faststream/broker/core/asyncronous/BrokerAsyncUsecase/" + newGetParams + window.location.hash
-            );
+    
+            // Update the search parameters with the new utm_referrer
+            const newGetParams = urlSearchParams.toString();
+    
+            // Redirect to href with the updated query parameters
+            window.location.replace("../../../../../../../0.2/api/faststream/broker/core/asyncronous/BrokerAsyncUsecase/" + (newGetParams ? `?${newGetParams}` : "") + window.location.hash);
         };
     </script>
     
