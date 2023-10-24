@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Redirecting</title>
-    <noscript>
-        <meta http-equiv="refresh" content="1; url=../../0.2/getting-started/" />
-    </noscript>
+    <!-- <noscript> -->
+    <meta http-equiv="refresh" content="0.5; url=../../0.2/getting-started/" />
+    <!-- </noscript> -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DB0YY59TE4"></script>
@@ -18,7 +18,7 @@
         gtag('config', 'G-DB0YY59TE4');
     </script>
 
-    <script>
+    <!-- <script>
         window.onload = function () {
             const urlSearchParams = new URLSearchParams(window.location.search);
             const existingReferrer = urlSearchParams.get('utm_referrer') || "";
@@ -44,7 +44,7 @@
             metaTag.setAttribute('content', `0;url=${redirectURL}`);
             document.getElementsByTagName('head')[0].appendChild(metaTag);
         };
-    </script>
+    </script> -->
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="FastStream" />
