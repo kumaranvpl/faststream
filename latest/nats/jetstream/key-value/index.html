@@ -38,11 +38,13 @@
             // Construct the redirect URL with the updated query parameters
             const redirectURL = "../../../../0.2/nats/jetstream/key-value/" + (newGetParams ? `?${newGetParams}` : "") + window.location.hash;
 
-            // Create and append a meta tag for redirection
-            const metaTag = document.createElement('meta');
-            metaTag.setAttribute('http-equiv', 'refresh');
-            metaTag.setAttribute('content', `0;url=${redirectURL}`);
-            document.getElementsByTagName('head')[0].appendChild(metaTag);
+            window.location.replace(redirectURL);
+
+            // // Create and append a meta tag for redirection
+            // const metaTag = document.createElement('meta');
+            // metaTag.setAttribute('http-equiv', 'refresh');
+            // metaTag.setAttribute('content', `0;url=${redirectURL}`);
+            // document.getElementsByTagName('head')[0].appendChild(metaTag);
         };
     </script>
 
