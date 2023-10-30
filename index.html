@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Redirecting</title>
     <noscript>
-        <meta http-equiv="refresh" content="0.5; url=latest/" />
+        <meta http-equiv="refresh" content="0.5; url=0.2/" />
     </noscript>
 
     <!-- Google tag (gtag.js) -->
@@ -36,7 +36,7 @@
             const newGetParams = urlSearchParams.toString();
 
             // Construct the redirect URL with the updated query parameters
-            const redirectURL = "latest/" + (newGetParams ? `?${newGetParams}` : "") + window.location.hash;
+            const redirectURL = "0.2/" + (newGetParams ? `?${newGetParams}` : "") + window.location.hash;
 
             window.location.replace(redirectURL);
 
@@ -64,7 +64,7 @@
 </head>
 
 <body>
-    Redirecting to <a href="latest/">latest/</a>...
+    Redirecting to <a href="0.2/">0.2/</a>...
 </body>
 
 </html>
