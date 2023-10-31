@@ -31,4 +31,4 @@ jobs:
             # - run: cd docs && mike delete --all
             - run: cd docs && envsubst '${VERSION}' < templates/index.html.template > templates/index.html
             - run: cd docs && mike deploy --template templates/redirect.html --update-aliases --no-redirect $VERSION
-            - run: cd docs && mike set-default --push --template templates/index.html $VERSION
+            - run: cd docs && mike set-default --push --template templates/redirect.html $VERSION
