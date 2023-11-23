@@ -17,5 +17,5 @@ jobs:
         with:
           url: https://dummy.faststream.airt.ai
           # pages_path: ./docs/site
-          cmd_params: '--verbose --buffer-size=8192 --max-connections=10 --color=always --exclude="(localhost:8000|linkedin.com|fonts.gstatic.com|docker.com)"'
-          debug: true
+          cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --exclude="(localhost:8000|linkedin.com|fonts.gstatic.com|docker.com)"'
+          # debug: true
