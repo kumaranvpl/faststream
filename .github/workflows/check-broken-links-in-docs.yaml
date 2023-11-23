@@ -28,6 +28,6 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: https://dummy.faststream.airt.ai
-          pages_path: ./docs/site
+          # pages_path: ./docs/site
           cmd_params: '--verbose --buffer-size=8192 --max-connections=10 --color=always'
           debug: true
