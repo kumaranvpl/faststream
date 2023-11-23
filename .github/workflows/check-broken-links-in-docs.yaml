@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - uses: actions/cache@v3
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-      - run: pip install -e ".[dev]"
-      - run: ./scripts/build-docs.sh
+      # - uses: actions/checkout@v4
+      #   with:
+      #     fetch-depth: 0
+      # - uses: actions/setup-python@v4
+      #   with:
+      #     python-version: 3.x
+      # - uses: actions/cache@v3
+      #   with:
+      #     key: ${{ github.ref }}
+      #     path: .cache
+      # - run: pip install -e ".[dev]"
+      # - run: ./scripts/build-docs.sh
       - name: Check links using container
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
