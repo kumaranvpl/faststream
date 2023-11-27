@@ -4,8 +4,7 @@ on:
   push:
     tags:
       - '*'
-permissions:
-  contents: write
+
 jobs:
   update-release-notes:
     runs-on: ubuntu-latest
@@ -16,9 +15,9 @@ jobs:
       BRANCH_NAME: update-release-notes-${{ github.ref_name }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for all tags and branches
+        uses: actions/checkout@v4
+        # with:
+        #   fetch-depth: 0 # Fetch all history for all tags and branches
 
       - name: Set up Python
         uses: actions/setup-python@v4
