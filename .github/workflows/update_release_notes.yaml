@@ -43,8 +43,11 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git checkout -b "$BRANCH_NAME"
           python ./docs/update_releases.py
+          git diff
           git add docs/docs/en/release.md
+          git status
           git commit -m "Update release notes for $TAG_NAME"
+          git log -n 3
           git push origin "$BRANCH_NAME"
 
       - name: Create Pull Request
