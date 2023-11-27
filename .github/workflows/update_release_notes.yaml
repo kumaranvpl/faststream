@@ -18,7 +18,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: 'main'
-        #   fetch-depth: 0 # Fetch all history for all tags and branches
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -38,25 +37,14 @@ jobs:
         run: |
           git diff --quiet || echo "::set-output name=changes_detected::true"
 
-      - run: git diff
+      - name: Show git diff
+        run: git diff
       - name: Create new branch and commit changes if there are any
         if: steps.git-check.outputs.changes_detected
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update release notes for ${{ env.TAG_NAME }}"
           branch: main
-        #   create_branch: true
           file_pattern: docs/docs/en/release.md
           commit_user_name: 'github-actions'
           commit_user_email: 'github-actions@github.com'
-
-    #   - name: Create Pull Request
-    #     if: steps.git-check.outputs.changes_detected
-    #     uses: peter-evans/create-pull-request@v5
-    #     with:
-    #       token: ${{ secrets.GITHUB_TOKEN }}
-    #       branch: ${{ env.BRANCH_NAME }}
-    #       title: "Update Release Notes for ${{ env.TAG_NAME }}"
-    #       commit-message: "Update Release Notes for ${{ env.TAG_NAME }}"
-    #       body: "This is an automated pull request to update the release notes for ${{ env.TAG_NAME }}"
-    #       base: "main" # The branch you want to merge into
