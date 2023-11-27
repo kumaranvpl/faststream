@@ -12,6 +12,74 @@ hide:
 ---
 
 # Release Notes
+## 0.2.113
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.112...0.2.113](https://github.com/kumaranvpl/faststream/compare/0.2.112...0.2.113){.external-link target="_blank"}
+
+## 0.2.112
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.111...0.2.112](https://github.com/kumaranvpl/faststream/compare/0.2.111...0.2.112){.external-link target="_blank"}
+
+## 0.2.111
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.110...0.2.111](https://github.com/kumaranvpl/faststream/compare/0.2.110...0.2.111){.external-link target="_blank"}
+
+## 0.2.110
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.109...0.2.110](https://github.com/kumaranvpl/faststream/compare/0.2.109...0.2.110){.external-link target="_blank"}
+
+## 0.2.109
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.108...0.2.109](https://github.com/kumaranvpl/faststream/compare/0.2.108...0.2.109){.external-link target="_blank"}
+
+## 0.2.108
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.107...0.2.108](https://github.com/kumaranvpl/faststream/compare/0.2.107...0.2.108){.external-link target="_blank"}
+
+## 0.2.107
+
+
+
+## 0.2.106
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.105...0.2.106](https://github.com/kumaranvpl/faststream/compare/0.2.105...0.2.106){.external-link target="_blank"}
+
+## 0.2.105
+
+
+
+## 0.2.104
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.103...0.2.104](https://github.com/kumaranvpl/faststream/compare/0.2.103...0.2.104){.external-link target="_blank"}
+
+## 0.2.103
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.102...0.2.103](https://github.com/kumaranvpl/faststream/compare/0.2.102...0.2.103){.external-link target="_blank"}
+
+## 0.2.102
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.101...0.2.102](https://github.com/kumaranvpl/faststream/compare/0.2.101...0.2.102){.external-link target="_blank"}
+
+## 0.2.101
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.100...0.2.101](https://github.com/kumaranvpl/faststream/compare/0.2.100...0.2.101){.external-link target="_blank"}
+
+## 0.2.100
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.99...0.2.100](https://github.com/kumaranvpl/faststream/compare/0.2.99...0.2.100){.external-link target="_blank"}
+
+## 0.2.99
+
+### What's Changed
+* Update mkdocs.yml by [@harishmohanraj](https://github.com/harishmohanraj){.external-link target="_blank"} in [https://github.com/kumaranvpl/faststream/pull/2](https://github.com/kumaranvpl/faststream/pull/2){.external-link target="_blank"}
+* Update main.html by [@harishmohanraj](https://github.com/harishmohanraj){.external-link target="_blank"} in [https://github.com/kumaranvpl/faststream/pull/3](https://github.com/kumaranvpl/faststream/pull/3){.external-link target="_blank"}
+* Harishmohanraj patch 2 by [@harishmohanraj](https://github.com/harishmohanraj){.external-link target="_blank"} in [https://github.com/kumaranvpl/faststream/pull/4](https://github.com/kumaranvpl/faststream/pull/4){.external-link target="_blank"}
+
+### New Contributors
+* [@harishmohanraj](https://github.com/harishmohanraj){.external-link target="_blank"} made their first contribution in [https://github.com/kumaranvpl/faststream/pull/2](https://github.com/kumaranvpl/faststream/pull/2){.external-link target="_blank"}
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.1...0.2.99](https://github.com/kumaranvpl/faststream/compare/0.2.1...0.2.99){.external-link target="_blank"}
+
 ## 0.2.15
 
 ### What's Changed
