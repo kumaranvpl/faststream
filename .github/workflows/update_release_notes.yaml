@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests typer
+          pip install -e ".[dev]"
 
       - name: Run update_releases.py script
         run: python ./docs/update_releases.py
