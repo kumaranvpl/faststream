@@ -1,0 +1,46 @@
+name: Update Release Notes
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  update_release_notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install requests typer
+
+      - name: Run update_releases.py
+        run: |
+          python ./docs/update_releases.py
+          git diff --exit-code || git config user.name "GitHub Actions" && git config user.email "<>"
+      
+      - name: Create new branch and commit changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git checkout -b update-release-notes-${{ github.event.ref_name }}
+            git add .
+            git commit -m "Update release notes for ${{ github.event.ref_name }}"
+            git push origin update-release-notes-${{ github.event.ref_name }}
+          fi
+
+      - name: Create Merge Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update-release-notes-${{ github.event.ref_name }}
+          commit-message: "Update release notes for ${{ github.event.ref_name }}"
+          title: "Update Release Notes"
+          body: "Automatically generated release notes update for ${{ github.event.ref_name }}"
