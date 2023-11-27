@@ -39,17 +39,13 @@ jobs:
       - run: git diff
       - name: Create new branch and commit changes if there are any
         if: steps.git-check.outputs.changes_detected
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git checkout -b "$BRANCH_NAME"
-          python ./docs/update_releases.py
-          git diff
-          git add docs/docs/en/release.md
-          git status
-          git commit -m "Update release notes for $TAG_NAME"
-          git log -n 3
-          git push origin "$BRANCH_NAME"
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update release notes for ${{ env.TAG_NAME }}"
+          branch: ${{ env.BRANCH_NAME }}
+          file_pattern: docs/docs/en/release.md
+          commit_user_name: 'github-actions'
+          commit_user_email: 'github-actions@github.com'
 
       - name: Create Pull Request
         if: steps.git-check.outputs.changes_detected
