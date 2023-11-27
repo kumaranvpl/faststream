@@ -9,6 +9,8 @@ permissions:
 jobs:
   update-release-notes:
     runs-on: ubuntu-latest
+    permissions:
+        contents: write
     env:
       TAG_NAME: ${{ github.ref_name }}
       BRANCH_NAME: update-release-notes-${{ github.ref_name }}
@@ -43,6 +45,7 @@ jobs:
         with:
           commit_message: "Update release notes for ${{ env.TAG_NAME }}"
           branch: ${{ env.BRANCH_NAME }}
+          create_branch: true
           file_pattern: docs/docs/en/release.md
           commit_user_name: 'github-actions'
           commit_user_email: 'github-actions@github.com'
