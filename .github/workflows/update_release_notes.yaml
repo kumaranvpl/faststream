@@ -35,6 +35,7 @@ jobs:
         run: |
           git diff --quiet || echo "::set-output name=changes_detected::true"
 
+      - run: git diff
       - name: Create new branch and commit changes if there are any
         if: steps.git-check.outputs.changes_detected
         run: |
