@@ -169,7 +169,7 @@ class AioPikaFastProducer:
                 with timeout_scope(rpc_timeout, raise_timeout):
                     msg = await response_queue.receive()
 
-                if msg:
+                if msg:  # pragma: no branch
                     return await self._decoder(await self._parser(msg))
 
         return None
@@ -214,6 +214,7 @@ class AioPikaFastProducer:
         if p_exchange is None:
             exchange_obj = self._channel.default_exchange
         else:
+            p_exchange.passive = True
             exchange_obj = await self.declarer.declare_exchange(p_exchange)
 
         message = AioPikaParser.encode_message(

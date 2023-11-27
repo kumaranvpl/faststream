@@ -1,3 +1,4 @@
+from typing import Optional, Pattern
 from uuid import uuid4
 
 from nats.aio.msg import Msg
@@ -5,7 +6,8 @@ from nats.aio.msg import Msg
 from faststream.broker.message import StreamMessage
 from faststream.broker.parsers import decode_message
 from faststream.nats.message import NatsMessage
-from faststream.types import DecodedMessage
+from faststream.types import AnyDict, DecodedMessage
+from faststream.utils.context.main import context
 
 
 class NatsParser:
@@ -17,10 +19,22 @@ class NatsParser:
         message: Msg,
     ) -> StreamMessage[Msg]:
         headers = message.header or {}
+
+        handler = context.get("handler_")
+        path: AnyDict = {}
+        path_re: Optional[Pattern[str]]
+        if (  # pragma: no branch
+            handler
+            and (path_re := handler.path_regex) is not None
+            and (match := path_re.match(message.subject)) is not None
+        ):
+            path = match.groupdict()
+
         return NatsMessage(
             is_js=self.is_js,
             raw_message=message,
             body=message.data,
+            path=path,
             reply_to=headers.get("reply_to", "") if self.is_js else message.reply,
             headers=headers,
             content_type=headers.get("content-type", ""),
