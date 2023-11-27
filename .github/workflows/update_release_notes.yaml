@@ -42,7 +42,7 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git checkout -b "$BRANCH_NAME"
           python ./docs/update_releases.py
-          git add .
+          git add docs/docs/en/release.md
           git commit -m "Update release notes for $TAG_NAME"
           git push origin "$BRANCH_NAME"
 
