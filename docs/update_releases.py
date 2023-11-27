@@ -28,7 +28,7 @@ def find_header(lines: List[str]) -> Tuple[str, List[str]]:
 
 def get_github_releases():
     # Get the latest version from GitHub releases
-    response = requests.get("https://api.github.com/repos/airtai/FastStream/releases")
+    response = requests.get("https://api.github.com/repos/kumaranvpl/faststream/releases")
     return response.json()
 
 
