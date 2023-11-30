@@ -39,7 +39,7 @@ jobs:
             echo "start"
             cd docs && mike deploy -F mkdocs.yml --update-aliases $VERSION latest
             echo "first part done"
-            cd docs && mike set-default --push --allow-empty -F mkdocs.yml latest
+            mike set-default --push --allow-empty -F mkdocs.yml latest
             echo "all over"
           else
             cd docs && mike deploy --push -F mkdocs.yml --update-aliases $VERSION
