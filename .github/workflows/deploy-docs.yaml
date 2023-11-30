@@ -38,8 +38,7 @@ jobs:
             cd docs && mike deploy -F mkdocs.yml --update-aliases $VERSION latest
             cd docs && mike set-default --push --allow-empty -F mkdocs.yml latest
           else
-            cd docs && mike deploy -F mkdocs.yml --update-aliases $VERSION
-            cd docs && mike set-default --push --allow-empty -F mkdocs.yml
+            cd docs && mike deploy --push -F mkdocs.yml --update-aliases $VERSION
           fi
       # - run: cd docs && mike deploy -F mkdocs.yml --update-aliases $VERSION latest
       # - run: cd docs && mike set-default --push --allow-empty -F mkdocs.yml latest
