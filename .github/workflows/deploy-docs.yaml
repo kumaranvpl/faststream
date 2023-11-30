@@ -6,6 +6,7 @@ on:
     paths:
       - docs/**
       - .github/workflows/deploy-docs.yaml
+      - faststream/__about__.py
 
 permissions:
   contents: write
