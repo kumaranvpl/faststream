@@ -35,12 +35,9 @@ jobs:
       - run: echo $VERSION
       - run: echo $IS_RC
       - run: |
-          if [ "$IS_RC" == "True" ]; then
-            echo "start"
+          if [ "$IS_RC" == "False" ]; then
             cd docs && mike deploy -F mkdocs.yml --update-aliases $VERSION latest
-            echo "first part done"
             mike set-default --push --allow-empty -F mkdocs.yml latest
-            echo "all over"
           else
             cd docs && mike deploy --push -F mkdocs.yml --update-aliases $VERSION
           fi
