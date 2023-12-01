@@ -39,16 +39,29 @@ jobs:
 
       - name: Show git diff
         run: git diff
-      - name: Create new branch and commit changes if there are any
-        if: steps.git-check.outputs.changes_detected
-        uses: stefanzweifel/git-auto-commit-action@v5
+
+      # - name: Stage changes
+      #   if: steps.git-check.outputs.changes_detected
+      #   run: git add docs/docs/en/release.md
+
+      # - name: Create new branch and commit changes if there are any
+      #   if: steps.git-check.outputs.changes_detected
+      #   uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: "Update release notes for ${{ env.TAG_NAME }}"
+      #     branch: ${{ env.BRANCH_NAME }}
+      #     create_branch: true
+      #     # file_pattern: docs/docs/en/release.md
+      #     commit_user_name: 'github-actions'
+      #     commit_user_email: 'github-actions@github.com'
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
         with:
-          commit_message: "Update release notes for ${{ env.TAG_NAME }}"
-          branch: ${{ env.BRANCH_NAME }}
-          create_branch: true
-          file_pattern: docs/docs/en/release.md
-          commit_user_name: 'github-actions'
-          commit_user_email: 'github-actions@github.com'
+          default_author: github_actions
+          new_branch: ${{ env.BRANCH_NAME }}
+          message: 'Update release notes for ${{ env.TAG_NAME }}'
+          add: '*.md'
 
       - name: Create Pull Request
         if: steps.git-check.outputs.changes_detected
