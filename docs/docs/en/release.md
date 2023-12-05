@@ -12,6 +12,30 @@ hide:
 ---
 
 # Release Notes
+## 0.2.119
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.118...0.2.119](https://github.com/kumaranvpl/faststream/compare/0.2.118...0.2.119){.external-link target="_blank"}
+
+## 0.2.118
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.117...0.2.118](https://github.com/kumaranvpl/faststream/compare/0.2.117...0.2.118){.external-link target="_blank"}
+
+## 0.2.117
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.116...0.2.117](https://github.com/kumaranvpl/faststream/compare/0.2.116...0.2.117){.external-link target="_blank"}
+
+## 0.2.116
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.115...0.2.116](https://github.com/kumaranvpl/faststream/compare/0.2.115...0.2.116){.external-link target="_blank"}
+
+## 0.2.115
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.114...0.2.115](https://github.com/kumaranvpl/faststream/compare/0.2.114...0.2.115){.external-link target="_blank"}
+
+## 0.2.114
+
+**Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.113...0.2.114](https://github.com/kumaranvpl/faststream/compare/0.2.113...0.2.114){.external-link target="_blank"}
+
 ## 0.2.113
 
 **Full Changelog**: [https://github.com/kumaranvpl/faststream/compare/0.2.112...0.2.113](https://github.com/kumaranvpl/faststream/compare/0.2.112...0.2.113){.external-link target="_blank"}
