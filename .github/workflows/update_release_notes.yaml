@@ -1,11 +1,9 @@
 name: Update Release Notes
 
 on:
-  release:
-    types: [published]
-  # push:
-  #   tags:
-  #     - '*'
+  push:
+    tags:
+      - '*'
 
 jobs:
   update-release-notes:
@@ -47,6 +45,7 @@ jobs:
         if: steps.git-check.outputs.changes_detected
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
           title: "Update Release Notes for ${{ env.TAG_NAME }}"
           commit-message: "Update Release Notes for ${{ env.TAG_NAME }}"
