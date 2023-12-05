@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        # with:
+          # fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -44,9 +44,9 @@ jobs:
         if: steps.git-check.outputs.changes_detected
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ env.BRANCH_NAME }}
           title: "Update Release Notes for ${{ env.TAG_NAME }}"
           commit-message: "Update Release Notes for ${{ env.TAG_NAME }}"
           body: "This is an automated pull request to update the release notes for ${{ env.TAG_NAME }}"
-          # base: "main" # The branch you want to merge into
+          base: "main" # The branch you want to merge into
