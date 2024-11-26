@@ -1609,6 +1609,12 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/constants/ContentTypes/"/>
     </url>
     <url>
+        <loc>https://faststream.airt.ai/latest/api/faststream/dummy/Dummy/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/dummy/Dummy/"/>
+    </url>
+    <url>
         <loc>https://faststream.airt.ai/latest/api/faststream/exceptions/AckMessage/</loc>
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
@@ -6047,6 +6053,12 @@
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/constants/ContentTypes/"/>
+    </url>
+    <url>
+        <loc>https://faststream.airt.ai/latest/public_api/faststream/dummy/Dummy/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/dummy/Dummy/"/>
     </url>
     <url>
         <loc>https://faststream.airt.ai/latest/public_api/faststream/exceptions/AckMessage/</loc>
