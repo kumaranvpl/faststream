@@ -1609,6 +1609,12 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/constants/ContentTypes/"/>
     </url>
     <url>
+        <loc>https://faststream.airt.ai/latest/api/faststream/dummy/Double/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/dummy/Double/"/>
+    </url>
+    <url>
         <loc>https://faststream.airt.ai/latest/api/faststream/dummy/Dummy/</loc>
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
@@ -1619,6 +1625,12 @@
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/dummy/Strange/"/>
+    </url>
+    <url>
+        <loc>https://faststream.airt.ai/latest/api/faststream/dummy/Twice/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/api/faststream/dummy/Twice/"/>
     </url>
     <url>
         <loc>https://faststream.airt.ai/latest/api/faststream/exceptions/AckMessage/</loc>
@@ -6061,6 +6073,12 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/constants/ContentTypes/"/>
     </url>
     <url>
+        <loc>https://faststream.airt.ai/latest/public_api/faststream/dummy/Double/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/dummy/Double/"/>
+    </url>
+    <url>
         <loc>https://faststream.airt.ai/latest/public_api/faststream/dummy/Dummy/</loc>
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
@@ -6071,6 +6089,12 @@
         <lastmod>2024-11-26</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/dummy/Strange/"/>
+    </url>
+    <url>
+        <loc>https://faststream.airt.ai/latest/public_api/faststream/dummy/Twice/</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://faststream.airt.ai/latest/public_api/faststream/dummy/Twice/"/>
     </url>
     <url>
         <loc>https://faststream.airt.ai/latest/public_api/faststream/exceptions/AckMessage/</loc>
